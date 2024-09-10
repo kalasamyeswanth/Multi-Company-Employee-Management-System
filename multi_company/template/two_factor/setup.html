@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+  <h2>Two-Factor Authentication Setup</h2>
+  <p>Scan the QR code with your authenticator app and enter the OTP below:</p>
+  <img src="{{ qr_code_url }}" alt="QR Code">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Verify</button>
+  </form>
+{% endblock %}
+
+</body>
+</html>

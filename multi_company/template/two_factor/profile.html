@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+  <h2>Manage OTP Devices</h2>
+  <p><a href="{% url 'two_factor:setup' %}">Add New OTP Device</a></p>
+  <ul>
+    {% for device in otp_devices %}
+      <li>{{ device.name }} <a href="{% url 'two_factor:delete' device.pk %}">Remove</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+</body>
+</html>

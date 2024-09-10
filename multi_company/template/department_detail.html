@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ department.name }}</title>
+</head>
+<body>
+    <h1>{{ department.name }}</h1>
+    <p>company : {{ department.company }}</p>
+    <a href="{% url 'Department_update' department.pk %}">Edit</a>
+    <a href="{% url 'Department_list' %}">Back to List</a>
+</body>
+</html>

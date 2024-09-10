@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ employee.name }}</title>
+</head>
+<body>
+    <h1>{{ role.title }}</h1>
+    <p>Employee ID: {{ role.company }}</p>
+    <a href="{% url 'Role_update' role.pk %}">Edit</a>
+    <a href="{% url 'Role_list' %}">Back to List</a>
+</body>
+</html>

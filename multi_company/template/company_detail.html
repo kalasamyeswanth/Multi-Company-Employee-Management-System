@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ company.name }}</title>
+</head>
+<body>
+    <h1>{{ company.name }}</h1>
+    <p>{{ company.address }}</p>
+    <p>{{ company.contact_information }}</p>
+    <img src="{{ company.logo.url }}" alt="Company Logo">
+    <a href="{% url 'company_update' company.pk %}">Edit</a>
+    <a href="{% url 'company_list' %}">Back to List</a>
+</body>
+</html>

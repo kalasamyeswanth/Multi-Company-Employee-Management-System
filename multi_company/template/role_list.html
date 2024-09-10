@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Role List</title>
+</head>
+<body>
+    <h1>Role List</h1>
+    <a href="{% url 'Role_create' %}">Add New Role</a>
+    <ul>
+        {% for role in role %}
+            <li>
+                <a href="{% url 'Role_detail' role.pk %}">{{ role.title }}</a>
+                <a href="{% url 'Role_update' role.pk %}">Edit</a>
+                <a href="{% url 'Role_delete' role.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

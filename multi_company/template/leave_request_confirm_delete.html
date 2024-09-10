@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete leave request</title>
+</head>
+<body>
+    
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <button type="submit">Confirm</button>
+    
+    <a href="{% url 'Leave_Request_list' leave.pk %}">Cancel</a>
+</form>
+</body>
+</html>

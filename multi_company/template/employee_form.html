@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create/Update Employee</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|yesno:"Edit Employee,Create Employee" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'employee_list' %}">Cancel</a>
+</body>
+</html>

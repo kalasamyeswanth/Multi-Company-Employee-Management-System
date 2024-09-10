@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leave Requests</title>
+</head>
+<body>
+    <h1>Leave Requests</h1>
+    <a href="{% url 'Leave_Request_create' %}">Add New Leave Request</a>
+    <ul>
+        {% for leave in leave %}
+            <li>
+                Employee: {{ leave.employee }} - Type: {{ leave.reason }} - Status: {{ leave.approved }} - From: {{ leave.start_date }} To: {{ leave.end_date }}
+                <a href="{% url 'Leave_Request_update' leave.pk %}">Edit</a>
+                <a href="{% url 'Leave_Request_delete' leave.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
